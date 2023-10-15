@@ -53,5 +53,11 @@ python manage.py showmigrations
 ```
 python manage.py migrate
 ```
+## Create SuperUser
+```
+python manage.py createsuperuser
+```
 ## Demo
 <img src="./screenshots/sigin.png" hight="500" width="500"/>
+<hr/>
+<img src="./screenshots/demp.gif" hight="500" width="500"/>
