@@ -37,6 +37,21 @@ python manage.py startapp base
 ```
 python manage.py runserver
 ```
-
+## Collect Static
+```
+python manage.py collectstatic
+```
+## Make Migrations
+```
+python manage.py makemigrations
+```
+## Show Migrations
+```
+python manage.py showmigrations
+```
+## Migrate
+```
+python manage.py migrate
+```
 ## Demo
 <img src="./screenshots/sigin.png" hight="500" width="500"/>
