@@ -1,10 +1,15 @@
+const APP_ID = '5309eb08f2964c099cdc037de4497b13'
+const CHANNEL = "main"
+const  TOKEN= "007eJxTYDBgLEm+LdQ0xbLtzaWkAhXuzUa9U+Yey92waotdRtmDWUoKDAamxmZpKYamlgZGRiZpRimJieZJaYapaYmm5qYmxmZJm25rpzYEMjLUVV5nZGSAQBCfhSE3MTOPgQEAG8IfXA=="
 
-const APP_ID = 'YOUR APP ID'
-const TOKEN = sessionStorage.getItem('token')
-const CHANNEL = sessionStorage.getItem('room')
-let UID = sessionStorage.getItem('UID')
 
-let NAME = sessionStorage.getItem('name')
+// const APP_ID = 'YOUR APP ID'
+// const TOKEN = sessionStorage.getItem('token')
+// const CHANNEL = sessionStorage.getItem('room')
+// let UID = sessionStorage.getItem('UID')
+let UID=null;
+
+// let NAME = sessionStorage.getItem('name')
 
 const client = AgoraRTC.createClient({mode:'rtc', codec:'vp8'})
 
@@ -26,17 +31,18 @@ let joinAndDisplayLocalStream = async () => {
     
     localTracks = await AgoraRTC.createMicrophoneAndCameraTracks()
 
-    let member = await createMember()
+    // let member = await createMember();
 
-    let player = `<div  class="video-container" id="user-container-${UID}">
-                     <div class="video-player" id="user-${UID}"></div>
-                     <div class="username-wrapper"><span class="user-name">${member.name}</span></div>
-                  </div>`
-    
+    let player =    `<div  class="video-container" id="user-container-${UID}">
+                        <div class="video-player" id="user-${UID}"></div>
+                        </div>`
+                        
+                        // <div class="username-wrapper"><span class="user-name">${member.name}</span></div>
     document.getElementById('video-streams').insertAdjacentHTML('beforeend', player)
     localTracks[1].play(`user-${UID}`)
     await client.publish([localTracks[0], localTracks[1]])
 }
+
 
 let handleUserJoined = async (user, mediaType) => {
     remoteUsers[user.uid] = user
@@ -133,7 +139,7 @@ let deleteMember = async () => {
     let member = await response.json()
 }
 
-window.addEventListener("beforeunload",deleteMember);
+// window.addEventListener("beforeunload",deleteMember);
 
 joinAndDisplayLocalStream()
 

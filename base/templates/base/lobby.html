@@ -1,6 +1,6 @@
 {% extends 'base/main.html' %}
-{% block content %}
 {% load static %}
+{% block content %}
 
 <main>
 
@@ -38,11 +38,13 @@
     let form = document.getElementById('form')
 
     let handleSubmit = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
         let room = e.target.room.value.toUpperCase()
-        let name = e.target.name.value
+        let name = e.target.name.value;
 
-       /* let response = await fetch(`/get_token/?channel=${room}`)
+        console.log(room,name)
+
+       let response = await fetch(`/get_token/?channel=${room}`)
         let data = await response.json()
 
         let UID = data.uid
@@ -54,7 +56,6 @@
         sessionStorage.setItem('name', name)
 
         window.open('/room/', '_self')
-        */
     }
 
 
