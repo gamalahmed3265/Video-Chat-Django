@@ -39,4 +39,4 @@ python manage.py runserver
 ```
 
 ## Demo
-<img src="./sigin.png" hight="500" width="500"/>
+<img src="/screenshots/sigin.png" hight="500" width="500"/>
