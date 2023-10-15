@@ -33,3 +33,7 @@ django-admin startproject projectName
 ```
 python manage.py startapp base
 ```
+## Run Server
+```
+python manage.py runserver
+```
